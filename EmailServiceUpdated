@@ -22,9 +22,9 @@ public class FetchController {
 			}
 			if (s.contains("+")) {
 				s = s.split("\\+")[0];
-				arr.add(s);
 
 			}
+			arr.add(s);
 		}
 		return arr;
 	}

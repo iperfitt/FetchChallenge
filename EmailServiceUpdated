@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://localhost:4200")
 public class FetchController {
 
-	// helper function to remove periods
+	// Helper function to remove periods
 	// and all characters after '+' character
 	public static ArrayList<String> stripEmails(ArrayList<String> emails) {
 

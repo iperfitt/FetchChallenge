@@ -1,0 +1,11 @@
+package com.ianperfitt.Services;
+
+import java.util.ArrayList;
+
+public interface EmailService {
+
+	ArrayList<String> stripEmails(ArrayList<String> emails);
+
+	int uniqueEmailCount(ArrayList<String> emails);
+
+}

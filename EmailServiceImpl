@@ -1,0 +1,35 @@
+package com.ianperfitt.Services;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class EmailServiceImpl implements EmailService {
+
+	// helper function to remove periods
+	// and all characters after '+' character
+	@Override
+	public ArrayList<String> stripEmails(ArrayList<String> emails) {
+		ArrayList<String> results = new ArrayList<>();
+		String s = "";
+		for (int i = 0; i < emails.size(); i++) {
+			// strip characters after username
+			s = emails.get(i).split("@")[0];
+			if (s.contains(".")) {
+				s = s.replace(".", "");
+			}
+			if (s.contains("+")) {
+				s = s.split("\\+")[0];
+			}
+			results.add(s);
+		}
+		return results;
+	}
+
+	@Override
+	public int uniqueEmailCount(ArrayList<String> emails) {
+		emails = stripEmails(emails);
+		HashSet<String> s = new HashSet<String>(emails);
+		return s.size();
+	}
+
+}
